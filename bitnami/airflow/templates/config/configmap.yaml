@@ -62,6 +62,8 @@ data:
               value: {{ .Values.executor }}
             - name: AIRFLOW_WEBSERVER_HOST
               value: {{ include "common.names.fullname" . }}
+            - name: AIRFLOW__API__AUTH_BACKEND
+              value: 'airflow.api.auth.backend.basic_auth'
             - name: AIRFLOW_WEBSERVER_PORT_NUMBER
               value: {{ .Values.service.port | quote }}
             {{- if .Values.extraEnvVars }}
@@ -116,6 +118,8 @@ data:
               value: {{ .Values.executor }}
             - name: AIRFLOW_WEBSERVER_HOST
               value: {{ include "common.names.fullname" . }}
+            - name: AIRFLOW__API__AUTH_BACKEND
+              value: 'airflow.api.auth.backend.basic_auth'
             - name: AIRFLOW_WEBSERVER_PORT_NUMBER
               value: {{ .Values.service.port | quote }}
             {{- if .Values.extraEnvVars }}

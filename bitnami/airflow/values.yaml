@@ -41,7 +41,7 @@ auth:
   forcePassword: false
   ## Specify username to access web UI
   ##
-  username: user
+  username: kappa
   ## Specify password to access web UI
   ##
   password:
@@ -576,12 +576,12 @@ git:
   dags:
     ## Enable in order to download DAG files from git repositories.
     ##
-    enabled: false
+    enabled: true
     repositories:
-      - repository:
-        branch:
-        name:
-        path:
+      - repository: ?????????? # need to access corpnetwork
+        branch: master
+        name: pipelines
+        path: kappa
   plugins:
     ## Enable in order to download Plugins files from git repositories.
     ##
